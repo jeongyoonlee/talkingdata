@@ -51,9 +51,9 @@ $(Y_TST): $(SAMPLE_SUBMISSION) | $(DIR_FEATURE)
 	cut -d, -f2 $< | tail -n +2 > $@
 
 $(Y_TRN) $(CV_ID): $(DATA_TRN) | $(DIR_FEATURE)
-	python src/extract_target.py --train-file $< \
-                                 --target-file $(Y_TRN) \
-                                 --cvid-file $(CV_ID)
+	python src/extract_target_cvid.py --train-file $< \
+                                      --target-file $(Y_TRN) \
+                                      --cvid-file $(CV_ID)
 
 # cleanup
 clean::
